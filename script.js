@@ -375,7 +375,7 @@ function navigate(page) {
   if (page === "admin" && !isAdmin()) {
 
     showToast(
-      "Доступ разрешён только главному администратору"
+      "Access is restricted to the main administrator"
     );
 
     return;
@@ -495,8 +495,8 @@ function renderTrending() {
         </h1>
 
         <p>
-          Откройте фильмы, сериалы и эксклюзивные релизы
-          в одной премиальной киноэкосистеме.
+          Explore movies, series, and exclusive releases
+          in one premium cinema ecosystem.
         </p>
 
         <div class="hero-actions">
@@ -506,14 +506,14 @@ function renderTrending() {
             onclick="openMovie('${featured[0]?.id || "douglas-formula"}')"
           >
             <i data-lucide="play"></i>
-            Смотреть сейчас
+            Watch now
           </button>
 
           <button
             class="secondary-button"
             onclick="navigate('releases')"
           >
-            Все релизы
+            All releases
             <i data-lucide="arrow-right"></i>
           </button>
 
@@ -529,9 +529,9 @@ function renderTrending() {
       <div class="section-heading">
 
         <div>
-          <h2>Популярное сейчас</h2>
+          <h2>Popular right now</h2>
           <p>
-            То, что смотрят прямо сейчас
+            What everyone is watching right now
           </p>
         </div>
 
@@ -539,7 +539,7 @@ function renderTrending() {
           class="text-button"
           onclick="navigate('releases')"
         >
-          Смотреть всё →
+          View all →
         </button>
 
       </div>
@@ -590,9 +590,9 @@ function renderTrending() {
       <div class="section-heading">
 
         <div>
-          <h2>В тренде</h2>
+          <h2>Trending</h2>
           <p>
-            Самые обсуждаемые фильмы платформы
+            The most talked-about movies on the platform
           </p>
         </div>
 
@@ -612,9 +612,9 @@ function renderTrending() {
       <div class="section-heading">
 
         <div>
-          <h2>Последние релизы</h2>
+          <h2>Latest releases</h2>
           <p>
-            Новые фильмы и предстоящие премьеры
+            New movies and upcoming premieres
           </p>
         </div>
 
@@ -708,16 +708,16 @@ function renderReleases() {
 
         <div>
 
-          <h2>Релизы</h2>
+          <h2>Releases</h2>
 
           <p>
-            Премьеры Seempay+ и запланированные проекты
+            Seempay+ premieres and upcoming projects
           </p>
 
         </div>
 
         <span class="plan-badge">
-          ${releases.length} проектов
+          ${releases.length} projects
         </span>
 
       </div>
@@ -762,8 +762,8 @@ function renderReleases() {
 
               ${
                 movie.status === "released"
-                  ? `<span class="status success">УЖЕ ВЫШЕЛ</span>`
-                  : `<span class="status pending">ПРЕМЬЕРА</span>`
+                  ? `<span class="status success">RELEASED</span>`
+                  : `<span class="status pending">PREMIERE</span>`
               }
 
               <div style="margin-top:7px;">
@@ -808,7 +808,7 @@ function renderProfile() {
           </div>
 
           <h2 style="margin:0 0 8px;">
-            Ваш профиль
+            Your profile
           </h2>
 
           <p style="
@@ -817,16 +817,16 @@ function renderProfile() {
             line-height:1.6;
             margin-bottom:22px;
           ">
-            Войдите, чтобы сохранять фильмы,
-            управлять подпиской и использовать
-            персональные функции Seempay+.
+            Sign in to save movies,
+            manage your subscription, and use
+            Seempay+ personalized features.
           </p>
 
           <button
             class="primary-button full-width"
             onclick="openAuth()"
           >
-            Войти
+            Sign in
           </button>
 
         </div>
@@ -850,7 +850,7 @@ function renderProfile() {
         <div>
 
           <h2>
-            ${escapeHTML(currentUser.name || "Пользователь")}
+            ${escapeHTML(currentUser.name || "User")}
           </h2>
 
           <p class="profile-email">
@@ -867,7 +867,7 @@ function renderProfile() {
             onclick="switchProfileTab('saved')"
           >
             <i data-lucide="bookmark"></i>
-            Избранное
+            Saved
           </button>
 
           <button
@@ -875,7 +875,7 @@ function renderProfile() {
             onclick="switchProfileTab('settings')"
           >
             <i data-lucide="settings-2"></i>
-            Настройки
+            Settings
           </button>
 
           <button
@@ -883,7 +883,7 @@ function renderProfile() {
             onclick="switchProfileTab('payments')"
           >
             <i data-lucide="credit-card"></i>
-            Методы оплаты
+            Payment Methods
           </button>
 
           <button
@@ -891,12 +891,12 @@ function renderProfile() {
             onclick="switchProfileTab('support')"
           >
             <i data-lucide="life-buoy"></i>
-            Поддержка
+            Support
           </button>
 
           <button onclick="logout()">
             <i data-lucide="log-out"></i>
-            Выйти
+            Log out
           </button>
 
         </div>
@@ -909,12 +909,12 @@ function renderProfile() {
               <div class="admin-access">
 
                 <h3>
-                  Администратор
+                  Administrator
                 </h3>
 
                 <p>
-                  Управление платформой,
-                  релизами и аналитикой.
+                  Manage the platform,
+                  releases, and analytics.
                 </p>
 
                 <button
@@ -922,7 +922,7 @@ function renderProfile() {
                   onclick="navigate('admin')"
                 >
                   <i data-lucide="shield"></i>
-                  Админ-панель
+                  Admin Panel
                 </button>
 
               </div>
@@ -1008,10 +1008,10 @@ function renderSaved() {
 
         <div>
 
-          <h2>Избранное</h2>
+          <h2>Saved</h2>
 
           <p>
-            Ваш список для просмотра
+            Your watchlist
           </p>
 
         </div>
@@ -1047,7 +1047,7 @@ function renderSaved() {
               ></i>
 
               <h3 style="margin:0 0 7px;">
-                Пока пусто
+                Nothing here yet
               </h3>
 
               <p style="
@@ -1055,8 +1055,8 @@ function renderSaved() {
                 color:var(--muted);
                 font-size:12px;
               ">
-                Добавляйте фильмы в избранное,
-                чтобы вернуться к ним позже.
+                Add movies to your saved list
+                to come back to them later.
               </p>
 
             </div>
@@ -1084,10 +1084,10 @@ function renderSettings() {
 
         <div>
 
-          <h2>Настройки</h2>
+          <h2>Settings</h2>
 
           <p>
-            Управляйте параметрами вашего аккаунта
+            Manage your account settings
           </p>
 
         </div>
@@ -1101,14 +1101,14 @@ function renderSettings() {
 
           ${renderToggleSetting(
             "notifications",
-            "Уведомления",
-            "Новости, премьеры и персональные рекомендации."
+            "Notifications",
+            "News, premieres, and personalized recommendations."
           )}
 
           ${renderToggleSetting(
             "autoplay",
-            "Автовоспроизведение",
-            "Автоматически запускать следующий эпизод."
+            "Autoplay",
+            "Automatically play the next episode."
           )}
 
 
@@ -1117,11 +1117,11 @@ function renderSettings() {
             <div>
 
               <p class="setting-title">
-                Качество видео
+                Video Quality
               </p>
 
               <p class="setting-description">
-                Выберите предпочтительное качество.
+                Choose your preferred quality.
               </p>
 
             </div>
@@ -1209,8 +1209,8 @@ function toggleSetting(key) {
 
   showToast(
     settings[key]
-      ? "Настройка включена"
-      : "Настройка отключена"
+      ? "Setting enabled"
+      : "Setting disabled"
   );
 
 }
@@ -1223,7 +1223,7 @@ function changeQuality(value) {
   saveState();
 
   showToast(
-    `Качество: ${value}`
+    `Quality: ${value}`
   );
 
 }
@@ -1243,10 +1243,10 @@ function renderPayments() {
 
         <div>
 
-          <h2>Методы оплаты</h2>
+          <h2>Payment Methods</h2>
 
           <p>
-            Управление способами оплаты подписки
+            Manage your subscription payment methods
           </p>
 
         </div>
@@ -1274,7 +1274,7 @@ function renderPayments() {
               </div>
 
               <div class="payment-detail">
-                Демо-подключение
+                Demo connection
               </div>
 
             </div>
@@ -1285,7 +1285,7 @@ function renderPayments() {
             class="secondary-button"
             onclick="simulatePayment('Apple Pay')"
           >
-            Подключить
+            Connect
           </button>
 
         </div>
@@ -1302,7 +1302,7 @@ function renderPayments() {
             <div>
 
               <div class="payment-name">
-                Банковская карта
+                Bank Card
               </div>
 
               <div class="payment-detail">
@@ -1315,9 +1315,9 @@ function renderPayments() {
 
           <button
             class="secondary-button"
-            onclick="simulatePayment('Банковская карта')"
+            onclick="simulatePayment('Bank Card')"
           >
-            Добавить
+            Add
           </button>
 
         </div>
@@ -1334,11 +1334,11 @@ function renderPayments() {
               </span>
 
               <h2>
-                799 ₽ / месяц
+                799 ₽ / month
               </h2>
 
               <p>
-                Без рекламы · 4K · персональные рекомендации
+                Ad-free · 4K · personalized recommendations
               </p>
 
             </div>
@@ -1358,7 +1358,7 @@ function renderPayments() {
             style="margin-top:20px;"
             onclick="simulateSubscription()"
           >
-            Оформить подписку
+            Subscribe
           </button>
 
         </div>
@@ -1385,10 +1385,10 @@ function renderSupport() {
 
         <div>
 
-          <h2>Поддержка</h2>
+          <h2>Support</h2>
 
           <p>
-            Мы готовы помочь
+            We're here to help
           </p>
 
         </div>
@@ -1417,7 +1417,7 @@ function renderSupport() {
               </div>
 
               <strong>
-                Написать в поддержку
+                Contact Support
               </strong>
 
             </div>
@@ -1427,15 +1427,15 @@ function renderSupport() {
               font-size:12px;
               line-height:1.6;
             ">
-              Если у вас возникли вопросы по подписке,
-              оплате или просмотру — отправьте сообщение.
+              If you have questions about your subscription,
+              payment, or watching content, send us a message.
             </p>
 
             <button
               class="primary-button"
               onclick="contactSupport()"
             >
-              Связаться с нами
+              Contact us
             </button>
 
           </div>
@@ -1447,7 +1447,7 @@ function renderSupport() {
           ">
 
             <strong>
-              Частые вопросы
+              Frequently Asked Questions
             </strong>
 
             <div style="
@@ -1459,18 +1459,18 @@ function renderSupport() {
               <button
                 class="secondary-button"
                 style="justify-content:space-between;"
-                onclick="showToast('Раздел подписки открыт')"
+                onclick="showToast('Subscription section opened')"
               >
-                Как работает подписка?
+                How does the subscription work?
                 <i data-lucide="chevron-right"></i>
               </button>
 
               <button
                 class="secondary-button"
                 style="justify-content:space-between;"
-                onclick="showToast('Раздел оплаты открыт')"
+                onclick="showToast('Payment section opened')"
               >
-                Как изменить карту?
+                How do I change my card?
                 <i data-lucide="chevron-right"></i>
               </button>
 
@@ -1513,18 +1513,18 @@ function renderAdmin() {
         ></i>
 
         <h2>
-          Доступ запрещён
+          Access denied
         </h2>
 
         <p style="color:var(--muted);">
-          Этот раздел доступен только главному администратору.
+          This section is available only to the main administrator.
         </p>
 
         <button
           class="secondary-button"
           onclick="navigate('profile')"
         >
-          Вернуться
+          Go back
         </button>
 
       </div>
@@ -1569,7 +1569,7 @@ function renderAdmin() {
 
             <i data-lucide="shield-check"></i>
 
-            Главный администратор
+            Main Administrator
 
           </div>
 
@@ -1578,8 +1578,8 @@ function renderAdmin() {
           </h1>
 
           <p>
-            Управление контентом, пользователями
-            и финансовыми показателями Seempay+.
+            Manage content, users
+            and Seempay+ financial metrics.
           </p>
 
         </div>
@@ -1589,7 +1589,7 @@ function renderAdmin() {
           onclick="navigate('profile')"
         >
           <i data-lucide="arrow-left"></i>
-          Профиль
+          Profile
         </button>
 
       </div>
@@ -1602,7 +1602,7 @@ function renderAdmin() {
           <div class="metric-top">
 
             <span class="metric-label">
-              Активные подписчики
+              Active Subscribers
             </span>
 
             <div class="metric-icon">
@@ -1623,7 +1623,7 @@ function renderAdmin() {
           <div class="metric-top">
 
             <span class="metric-label">
-              Выручка
+              Revenue
             </span>
 
             <div class="metric-icon">
@@ -1644,7 +1644,7 @@ function renderAdmin() {
           <div class="metric-top">
 
             <span class="metric-label">
-              Транзакции
+              Transactions
             </span>
 
             <div class="metric-icon">
@@ -1671,7 +1671,7 @@ function renderAdmin() {
           <div class="admin-card-header">
 
             <h2>
-              Добавить релиз
+              Add релиз
             </h2>
 
             <span>
@@ -1690,13 +1690,13 @@ function renderAdmin() {
               <div class="form-group">
 
                 <label>
-                  Название *
+                  Title *
                 </label>
 
                 <input
                   id="releaseTitle"
                   required
-                  placeholder="Название фильма"
+                  placeholder="Movie title"
                 />
 
               </div>
@@ -1705,7 +1705,7 @@ function renderAdmin() {
               <div class="form-group">
 
                 <label>
-                  Дата релиза *
+                  Release Date *
                 </label>
 
                 <input
@@ -1720,7 +1720,7 @@ function renderAdmin() {
               <div class="form-group">
 
                 <label>
-                  Год
+                  Year
                 </label>
 
                 <input
@@ -1737,7 +1737,7 @@ function renderAdmin() {
               <div class="form-group">
 
                 <label>
-                  Жанр
+                  Genre
                 </label>
 
                 <input
@@ -1751,7 +1751,7 @@ function renderAdmin() {
               <div class="form-group">
 
                 <label>
-                  Рейтинг
+                  Rating
                 </label>
 
                 <input
@@ -1769,7 +1769,7 @@ function renderAdmin() {
               <div class="form-group">
 
                 <label>
-                  Длительность
+                  Duration
                 </label>
 
                 <input
@@ -1783,12 +1783,12 @@ function renderAdmin() {
               <div class="form-group full">
 
                 <label>
-                  Описание
+                  Description
                 </label>
 
                 <textarea
                   id="releaseDescription"
-                  placeholder="Краткое описание фильма..."
+                  placeholder="Short movie description..."
                 ></textarea>
 
               </div>
@@ -1797,7 +1797,7 @@ function renderAdmin() {
               <div class="form-group full">
 
                 <label>
-                  URL постера
+                  Poster URL
                 </label>
 
                 <input
@@ -1812,7 +1812,7 @@ function renderAdmin() {
               <div class="form-group full">
 
                 <label>
-                  URL фонового изображения
+                  Background Image URL
                 </label>
 
                 <input
@@ -1827,7 +1827,7 @@ function renderAdmin() {
               <div class="form-group full">
 
                 <label>
-                  URL трейлера
+                  Trailer URL
                 </label>
 
                 <input
@@ -1842,17 +1842,17 @@ function renderAdmin() {
               <div class="form-group">
 
                 <label>
-                  Статус
+                  Status
                 </label>
 
                 <select id="releaseStatus">
 
                   <option value="upcoming">
-                    Запланирован
+                    Scheduled
                   </option>
 
                   <option value="released">
-                    Вышел
+                    Released
                   </option>
 
                 </select>
@@ -1873,7 +1873,7 @@ function renderAdmin() {
                   type="submit"
                 >
                   <i data-lucide="plus"></i>
-                  Добавить релиз
+                  Add релиз
                 </button>
 
               </div>
@@ -1892,11 +1892,11 @@ function renderAdmin() {
           <div class="admin-card-header">
 
             <h2>
-              Последние транзакции
+              Latest Transactions
             </h2>
 
             <span>
-              ${transactions.length} записей
+              ${transactions.length} records
             </span>
 
           </div>
@@ -1910,10 +1910,10 @@ function renderAdmin() {
 
                 <tr>
 
-                  <th>Дата</th>
-                  <th>Пользователь</th>
-                  <th>Сумма</th>
-                  <th>Статус</th>
+                  <th>Date</th>
+                  <th>User</th>
+                  <th>Amount</th>
+                  <th>Status</th>
 
                 </tr>
 
@@ -1946,10 +1946,10 @@ function renderAdmin() {
                       >
                         ${
                           transaction.status === "success"
-                            ? "Оплачено"
+                            ? "Paid"
                             : transaction.status === "pending"
-                              ? "Ожидает"
-                              : "Ошибка"
+                              ? "Pending"
+                              : "Failed"
                         }
                       </span>
 
@@ -1975,11 +1975,11 @@ function renderAdmin() {
         <div class="admin-card-header">
 
           <h2>
-            База релизов
+            Release Library
           </h2>
 
           <span>
-            ${releases.length} проектов
+            ${releases.length} projects
           </span>
 
         </div>
@@ -2014,7 +2014,7 @@ function renderAdmin() {
               <button
                 class="secondary-button"
                 onclick="deleteRelease('${movie.id}')"
-                title="Удалить"
+                title="Delete"
               >
                 <i data-lucide="trash-2"></i>
               </button>
@@ -2043,7 +2043,7 @@ function addRelease(event) {
 
   if (!isAdmin()) {
 
-    showToast("Нет доступа");
+    showToast("Access denied");
 
     return;
   }
@@ -2076,7 +2076,7 @@ function addRelease(event) {
 
   const description =
     document.getElementById("releaseDescription").value.trim() ||
-    "Описание пока не добавлено.";
+    "Description пока не добавлено.";
 
   const poster =
     document.getElementById("releasePoster").value.trim() ||
@@ -2121,7 +2121,7 @@ function addRelease(event) {
   saveState();
 
   showToast(
-    `«${title}» добавлен в базу`
+    `«${title}» has been added to the library`
   );
 
   event.target.reset();
@@ -2145,7 +2145,7 @@ function deleteRelease(id) {
 
   const confirmed =
     confirm(
-      `Удалить «${movie.title}»?`
+      `Delete «${movie.title}»?`
     );
 
   if (!confirmed) return;
@@ -2164,7 +2164,7 @@ function deleteRelease(id) {
 
   renderPage();
 
-  showToast("Релиз удалён");
+  showToast("Release deleted");
 
 }
 
@@ -2237,8 +2237,8 @@ function handleLogin(event) {
 
   showToast(
     isAdmin()
-      ? "Вы вошли как главный администратор"
-      : "Добро пожаловать в Seempay+"
+      ? "You are signed in as the main administrator"
+      : "Welcome to Seempay+"
   );
 
 }
@@ -2256,7 +2256,7 @@ function logout() {
 
   navigate("trending");
 
-  showToast("Вы вышли из аккаунта");
+  showToast("You have been signed out");
 
 }
 
@@ -2353,8 +2353,8 @@ function openMovie(id) {
 
           ${
             movie.status === "released"
-              ? "Доступно сейчас"
-              : `Премьера · ${formatDate(movie.releaseDate)}`
+              ? "Available now"
+              : `Premiere · ${formatDate(movie.releaseDate)}`
           }
 
         </span>
@@ -2391,8 +2391,8 @@ function openMovie(id) {
             <i data-lucide="play"></i>
             ${
               movie.status === "released"
-                ? "Смотреть"
-                : "Трейлер"
+                ? "Watch"
+                : "Trailer"
             }
           </button>
 
@@ -2409,8 +2409,8 @@ function openMovie(id) {
 
             ${
               isSaved
-                ? "В избранном"
-                : "Сохранить"
+                ? "Saved"
+                : "Save"
             }
 
           </button>
@@ -2453,7 +2453,7 @@ function toggleSaved(id) {
     openAuth();
 
     showToast(
-      "Войдите, чтобы сохранять фильмы"
+      "Sign in to save movies"
     );
 
     return;
@@ -2467,13 +2467,13 @@ function toggleSaved(id) {
         movieId => movieId !== id
       );
 
-    showToast("Удалено из избранного");
+    showToast("Removed from saved");
 
   } else {
 
     savedMovies.push(id);
 
-    showToast("Добавлено в избранное");
+    showToast("Added to saved");
 
   }
 
@@ -2576,7 +2576,7 @@ function performSearch() {
 
     resultsContainer.innerHTML = `
       <div class="empty-search">
-        Ничего не найдено
+        Nothing found
       </div>
     `;
 
@@ -2637,7 +2637,7 @@ function simulatePayment(method) {
   }
 
   showToast(
-    `${method}: демонстрация подключения`
+    `${method}: demo connection`
   );
 
 }
@@ -2680,7 +2680,7 @@ function simulateSubscription() {
   saveState();
 
   showToast(
-    "Подписка активирована — демо"
+    "Subscription activated — demo"
   );
 
 }
@@ -2693,7 +2693,7 @@ function simulateSubscription() {
 function contactSupport() {
 
   showToast(
-    "Форма поддержки будет подключена к backend"
+    "Support form will be connected to the backend"
   );
 
 }
@@ -2713,7 +2713,7 @@ function simulateWatch(id) {
   if (movie.status !== "released") {
 
     showToast(
-      `Трейлер: ${movie.title}`
+      `Trailer: ${movie.title}`
     );
 
     return;
@@ -2721,7 +2721,7 @@ function simulateWatch(id) {
 
 
   showToast(
-    `Запуск просмотра: ${movie.title}`
+    `Starting playback: ${movie.title}`
   );
 
 }
@@ -2836,12 +2836,12 @@ document.addEventListener(
    DEMO ADMIN HELPER
 =========================================================
 
-   Для входа в админку:
+   To access the admin panel:
 
    Email:
    yosoycastello@gmail.com
 
-   Пароль специально не используется
-   в этой frontend-версии.
+   A password is intentionally not used
+   in this frontend version.
 
 ========================================================= */
